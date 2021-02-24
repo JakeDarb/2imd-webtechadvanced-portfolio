@@ -116,3 +116,45 @@ body{
         grid-area: 6 / 3 / 7 / 4; 
     }
 }
+
+@media(min-width: 1000px){
+    body{
+         grid-template-columns: .1em repeat(5, 1fr) .1em;
+         grid-template-rows: .2em repeat(3, 1fr) .2em;
+    } 
+ 
+    .homework:nth-child(2){
+         grid-area: 2 / 3 / 3 / 4;
+     }
+ 
+     .broken{
+        grid-area: 2 / 4 / 5 / 5; 
+     }
+ 
+     .homework:nth-child(4){
+        grid-area: 3 / 2 / 4 / 3; 
+     }
+     .homework:nth-child(5){
+        grid-area: 3 / 3 / 4 / 4;  
+     }
+ 
+     .infinity{
+        grid-area: 3 / 5 / 5 / 7; 
+     }
+ 
+     .homework:nth-child(7){
+        grid-area: 4 / 2 / 5 / 3;
+     }
+ 
+     .homework:nth-child(8){
+        grid-area: 4 / 3 / 5 / 4;
+     }
+ 
+     .homework:nth-child(9){
+        grid-area: 2 / 5 / 3 / 6;
+     }
+ 
+     .homework:nth-child(10){
+        grid-area: 2 / 6 / 3 / 7;
+     }
+ }
