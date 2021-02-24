@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    grid-template-columns: .1em 1fr .1em;
+    grid-template-rows: .2em repeat(10, 1fr) .2em;
+    display: grid;
+    grid-gap: 1em;
+    font-size: 1.5em;
+}
+
+.homework{
+    background-color: red;
+}
+
+.broken{
+    background-color: mediumturquoise;
+}
+
+.infinity{
+    background-color: yellow;
+}
+
+.homework, .broken, .infinity {
+    grid-column: 2/3;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    align-items: center;
+    padding: 2em .5em;
+    display: grid; 
+}
+
+.homework:first-child{
+    grid-row: 2/3;
+}
+
+.homework:nth-child(2){
+    grid-row: 3/4;
+}
+
+.broken{
+    grid-row: 4/5;   
+}
+
+.homework:nth-child(4){
+    grid-row: 5/6;
+}
+.homework:nth-child(5){
+    grid-row: 6/7;
+}
+
+.infinity{
+    grid-row: 7/8;
+}
+
+.homework:nth-child(7){
+    grid-row: 8/9;
+}
+
+.homework:nth-child(8){
+    grid-row: 9/10;
+}
+
+.homework:nth-child(9){
+    grid-row: 10/11;
+}
+
+.homework:nth-child(10){
+    grid-row: 11/12;
+}
+
