@@ -1,12 +1,13 @@
 class Note {
     constructor(title) {
         this.title = title;
-        this.element = this.createElement(title);
+        this.element = this.createElement(title);   
+        //localStorage.clear();
     }
 
     createElement(title) {
         let newNote = document.createElement("li");
-        newNote.innerHTML = document.getElementById("taskInput").value;
+        newNote.innerHTML = title;
         newNote.addEventListener('click', this.remove.bind(title));
         return newNote;
     }
@@ -15,7 +16,6 @@ class Note {
         // HINT🤩
         // this function should append the note to the screen somehow
         document.getElementById("taskList").appendChild(this.element);
-        this.saveToStorage();
     }
 
     saveToStorage() {
@@ -53,18 +53,18 @@ class App {
         this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
         // read up on .bind() -> we need to pass the current meaning of this to the eventListener
         // when the app loads, we can show previously saved noted from localstorage
-        // this.loadNotesFromStorage();
+        this.loadNotesFromStorage();
     }
 
     loadNotesFromStorage() {
         // HINT🤩
         // load all notes from storage here and add them to the screen
-        let savedList = JSON.parse(localStorage.getItem("list"));
-        if(savedList > 0){
-            savedList.forEach(title => {
-                let note = new Note(title);
-                note.add();
-            })
+        if (localStorage.getItem("list") != null){
+            let savedList = JSON.parse(localStorage.getItem("list"));
+            for (let i = 0; i < savedList.length; i++) {
+                let savedNote = new Note(savedList[i]);
+                savedNote.add();
+              }
         }
     }
 
@@ -77,6 +77,7 @@ class App {
         if (e.keyCode === 13) {
             let note = new Note(this.txtTodo.value);
             note.add();
+            note.saveToStorage();
             this.txtTodo.value = "";
             e.preventDefault();
         }
