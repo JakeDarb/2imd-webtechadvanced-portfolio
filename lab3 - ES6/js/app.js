@@ -81,13 +81,14 @@ class App {
             let note = new Note(this.txtTodo.value);
             note.add();
             note.saveToStorage();
-            this.txtTodo.value = "";
+            note.reset();
             e.preventDefault();
         }
     }
 
     reset() {
         // this function should reset the form / clear the text field
+        this.txtTodo.value = "";
     }
 }
 
