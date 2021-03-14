@@ -7,7 +7,7 @@ class Note {
     createElement(title) {
         let newNote = document.createElement("li");
         newNote.innerHTML = document.getElementById("taskInput").value;
-        newNote.addEventListener('click', this.remove.bind(newNote));
+        newNote.addEventListener('click', this.remove.bind(title));
         return newNote;
     }
 
@@ -15,12 +15,24 @@ class Note {
         // HINT🤩
         // this function should append the note to the screen somehow
         document.getElementById("taskList").appendChild(this.element);
+        this.saveToStorage();
     }
 
     saveToStorage() {
         // HINT🤩
         // localStorage only supports strings, not arrays
         // if you want to store arrays, look at JSON.parse and JSON.stringify
+    
+        if(localStorage.getItem("list") === null){
+            let list = [];
+            list.push(this.title);
+            localStorage.setItem("list", JSON.stringify(list));
+        } else {
+            let list = JSON.parse(localStorage.getItem("list"));
+            list.push(this.title);
+            localStorage.setItem("list", JSON.stringify(list));
+        }
+
     }
 
     remove() {
@@ -47,18 +59,25 @@ class App {
     loadNotesFromStorage() {
         // HINT🤩
         // load all notes from storage here and add them to the screen
+        let savedList = JSON.parse(localStorage.getItem("list"));
+        if(savedList > 0){
+            savedList.forEach(title => {
+                let note = new Note(title);
+                note.add();
+            })
+        }
     }
 
     createNote(e) {
         // this function should create a new note by using the Note() class
         // HINT🤩
-        let note = new Note();
         // note.add();
         // note.saveToStorage();
         // clear the text field with .reset in this class
         if (e.keyCode === 13) {
+            let note = new Note(this.txtTodo.value);
             note.add();
-            document.getElementById("taskInput").value = "";
+            this.txtTodo.value = "";
             e.preventDefault();
         }
     }
