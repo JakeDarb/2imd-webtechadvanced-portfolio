@@ -85,7 +85,7 @@ class App {
             let note = new Note(this.txtTodo.value);
             note.add();
             note.saveToStorage();
-            note.reset();
+            this.reset();
             e.preventDefault();
         }
     }
