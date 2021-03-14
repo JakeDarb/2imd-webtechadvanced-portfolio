@@ -8,7 +8,7 @@ class Note {
     createElement(title) {
         let newNote = document.createElement("li");
         newNote.innerHTML = title;
-        newNote.addEventListener('click', this.remove.bind(title));
+        newNote.addEventListener('click', this.remove.bind(newNote));
         return newNote;
     }
 
@@ -39,7 +39,10 @@ class Note {
         // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
         // in this function, 'this' will refer to the current note element
         // .removeChild(this)
+        //removeChild(this);
         // remove the item from screen and from localstorage
+        document.getElementById("taskList").removeChild(this);
+        //console.log(this);
     }
 }
 
