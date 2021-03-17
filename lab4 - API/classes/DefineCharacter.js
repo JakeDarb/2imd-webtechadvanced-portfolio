@@ -54,4 +54,13 @@ class DefineCharacter{
 
 }
 
-let character = new DefineCharacter("biby");
+document.getElementById("form").addEventListener("keypress", (e) => {
+    
+    if(e.key === "Enter"){
+        let character = new DefineCharacter(document.getElementById("name").value);
+    }
+})
+
+document.getElementById("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+})
