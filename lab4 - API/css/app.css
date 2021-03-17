@@ -40,15 +40,13 @@ form input{
     margin-top: 1em;
 }
 
-.form{
-    display: none;
-}
+
 
 .definedCharacter{
     width: 300px;
     height: 600px;
     background-color: #E5EC2E;
-    display: grid;
+    display: none;
     justify-items: center;
     align-items: center;
     grid-template-rows: 300px 1em 1fr 5em;

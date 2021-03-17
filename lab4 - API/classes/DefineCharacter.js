@@ -58,6 +58,8 @@ document.getElementById("form").addEventListener("keypress", (e) => {
     
     if(e.key === "Enter"){
         let character = new DefineCharacter(document.getElementById("name").value);
+        document.querySelector(".definedCharacter").style.display = "grid";
+        document.querySelector(".form").style.display = "none";
     }
 })
 
