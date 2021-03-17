@@ -35,8 +35,8 @@ class DefineCharacter{
             return response.json();
         })
         .then((json)=>{
-            console.log(json.name);
-            console.log(json.image);
+            document.querySelector(".definedCharacter h1").innerHTML = json.name;
+            document.getElementById("characterImg").src = json.image;
             this.chooseEpisode(json.episode);
         })
     }
@@ -47,8 +47,8 @@ class DefineCharacter{
             return response.json();
         })
         .then((json)=>{
-            console.log(json.name);
-            console.log(json.episode);
+            document.getElementById("episodeName").innerHTML = json.name;
+            document.getElementById("episodeNr").innerHTML = json.episode;
         })
     }
 
