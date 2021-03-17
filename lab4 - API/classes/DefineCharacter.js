@@ -16,7 +16,6 @@ class DefineCharacter{
     }
 
     chooseCharacter(age){
-        let url = "https://rickandmortyapi.com/api/character/";
         let characterId;
         if(age<=5){
             characterId = 472;
@@ -29,7 +28,7 @@ class DefineCharacter{
         }else{
             characterId = 381;
         }
-        url = `https://rickandmortyapi.com/api/character/${characterId}`;
+        let url = `https://rickandmortyapi.com/api/character/${characterId}`;
         fetch(url)
         .then((response) => {
             return response.json();
