@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 5fr 5em;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    width: 300px;
+    height: 600px;
+    background-color: #E5EC2E;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-size: cover;
+    color: white;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F46%2F57%2F63%2F465763ecfc9714cda998040ed75fe975.png&f=1&nofb=1);
+}
+
+h1{
+    background-color: #6FC41C;
+    width: 100%;
+    align-self: flex-start;
+    color: black;
+    padding: .5em 0;
+    text-align: center;
+}
+
+.netflixLogo{
+    height: 5em;
+}
+
+form{
+    text-align: center;
+    background-color: rgba(0,0,0,.75);
+    padding: 1em 0;
+}
+
+form input{
+    margin-top: 1em;
+    padding: .2em .5em;
+}
+
+
+
+.definedCharacter{
+    width: 300px;
+    height: 600px;
+    background-color: #E5EC2E;
+    display: none;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 300px 1em 1fr 5em;
+}
+
+p{
+    text-align: center;
+    font-size: 2em;
+    margin-top: .5em;
+}
+
+.ep{
+    margin-top: 3em;
+}
