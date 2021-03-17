@@ -37,9 +37,21 @@ class DefineCharacter{
         .then((json)=>{
             console.log(json.name);
             console.log(json.image);
+            this.chooseEpisode(json.episode);
+        })
+    }
+
+    chooseEpisode(url){
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((json)=>{
+            console.log(json.name);
+            console.log(json.episode);
         })
     }
 
 }
 
-let character = new DefineCharacter("liam");
+let character = new DefineCharacter("biby");
