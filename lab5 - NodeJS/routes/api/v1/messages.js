@@ -2,7 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 router.get("/", (req, res)=>{
-    res.send("get basic");
+    res.json({
+        "status": "success",
+        "message": "Getting a new message",
+        "data": {
+            "messages": [
+                "dit is een test",
+                "werkt goed zeg",
+                "how you doing",
+                "I'm a barbie girl"
+            ]
+        }
+    });
 });
 
 router.get("/:id", (req, res)=>{
